@@ -1,17 +1,16 @@
 
-var imageName: String
-var condition = 310
-var nightTime = true
-switch (condition, nightTime) {
-case let (x, y) where x < 300 && y == true:     imageName = "11n"
-case let (x, y) where x < 300 && y == false:    imageName = "11d"
-    
-case let (x, y) where x < 1000 && y == true:    imageName = "11n"
-case let (x, y) where x < 1000 && y == false:   imageName = "11d"
-    
-case let (x, y): imageName = "dunno"
-}
+var (varStatusCode, varStatusMessage) = httpError404
+varStatusCode
+varStatusMessage
 
+// Access tuple values with the dot operator followed by their index:
+httpError404.0
+httpError404.1
 
+// Alternatively, you can name the elements of a Tuple
+let namedTuple = (statusCode: 404, message: "Not found")
 
+// When you name the elements you effectively assign names to their indices, so the dot operator works with names or integers:
+namedTuple.statusCode == namedTuple.0
+namedTuple.message == namedTuple.1
 

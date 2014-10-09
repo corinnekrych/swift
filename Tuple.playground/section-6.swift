@@ -1,5 +1,4 @@
 
-// Tuple to enumerate a Dictionnary
 var dict = ["onekey":"onevalue", "twokey":"twovalue"]
 
 for (key, value) in dict {
@@ -7,6 +6,4 @@ for (key, value) in dict {
     println("\(key):\(value)")
 }
 dict
-
-
 

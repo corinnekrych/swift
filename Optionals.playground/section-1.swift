@@ -18,12 +18,14 @@ var i: Int?
 var j: Int?
 //var k = i + j     // compilation issue
 //var k = i! + j!   // no compilation issue but runtime issue if i/j not initialised
+//var k = (i ?? 0) + (j ?? 0) // nil
 
 // Most of the time, operating on optionals required unwrapping...
 // Except for println and string interpolation
 var kitty: String? = "Kitty"
 var greeting = "Hello \(kitty)"     // No compiler error!
-print("Hello"); println(kitty)      // Also fine.
+print("Hello")
+println(kitty)      // Also fine.
 //var nope = "Hello " + kitty         // Compiler error
 
 
@@ -44,14 +46,6 @@ hello = "Hello, \(optionalName)"
 if let name = optionalName {
     hello = "Hello, \(name)" // executed
 }
-
-// same idea with for
-var jsonResponse: [String:String?] = ["one":"onevalue", "two":nil]
-var str:String?
-for (key, value) in jsonResponse {
-    str = "key \(key) value \(value)"
-}
-str // Some "key one value onevalue"
 
 // 3. optional chaining
 // do not unwrap optionals if not needed, work with then
