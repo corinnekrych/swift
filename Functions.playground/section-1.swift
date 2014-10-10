@@ -4,8 +4,8 @@
 
 // 1.functions
 
-func hello() {
-    println("hello, world!")
+func hello() -> String {
+    return "hello, world!"
 }
 
 func hello(firstname: String, lastname: String) -> String {
@@ -56,4 +56,13 @@ greetings(morning)("Isabel", lastname: "Dupont", age: 5, location: "Geneve")
 // => Function first class citizen
 
 // 4. Init
+class GreetingPolyglot {
+    var language:String
+    init(language: String) {
+        self.language = language
+    }
+}
+let frenchGreeting = GreetingPolyglot(language: "french")
+// why?
+
 

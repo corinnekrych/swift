@@ -29,3 +29,7 @@ func map<T, U>(array: [T], callback: (T) -> U) -> [U] {
 
 
 // https://medium.com/@santoshrajan/4bb7256c087d
+
+// http://www.objc.io/issue-16/functional-swift-apis.html
+// florian
+// build a photo filter

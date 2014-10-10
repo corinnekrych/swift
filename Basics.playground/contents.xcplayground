@@ -3,6 +3,10 @@
     <sections>
         <documentation relative-path='basic1.html'/>
         <code source-file-name='section-2.swift'/>
+         <documentation relative-path='basic2.html'/>
+         <code source-file-name='section-3.swift'/>
+         <documentation relative-path='basic3.html'/>
+         <code source-file-name='section-4.swift'/>
     </sections>
     <timeline fileName='timeline.xctimeline'/>
 </playground>

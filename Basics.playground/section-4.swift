@@ -8,7 +8,8 @@ for i in 1...3 {
     }
 }
 
-var direction = "up"switch direction {
+var direction = "up"
+switch direction {
     case "down": println("Going Down!")
     case "up": println("Going Up!")
     default: println("Going Nowhere")

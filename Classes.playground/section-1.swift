@@ -1,5 +1,4 @@
-// Playground - noun: a place where people can play
 
-import UIKit
+// compute properties 
 
-var str = "Hello, playground"
+// access control
