@@ -1,18 +1,3 @@
-// from http://rshankar.com/difference-between-struct-and-class-in-swift/
-// The main difference is that objects on Struct are passed by value and objects on Class are passed by reference.
-
-
-//class Rectangle {
-struct Rectangle {
-    var length: Int = 0
-    var breadth: Int = 0
-}
-var rectangle1 = Rectangle()
-rectangle1.length = 12
-var rectangle2 = rectangle1
-rectangle2.length = 24
-println(rectangle1.length)
-println(rectangle2.length)
 
 // So if you want to encapsulate simple data types and use less memory space then go for Struct. Where as if you need to use inheritance, for example you have another class Shape and you want to inherit the methods and properties of Shape class for Rectangle then go for Class. In short, if the importance is for value of the object use Struct and for identify of object use Class.
 
