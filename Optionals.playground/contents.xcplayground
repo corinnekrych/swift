@@ -7,6 +7,8 @@
         <code source-file-name='section-4.swift'/>
         <documentation relative-path='optionals3.html'/>
         <code source-file-name='section-6.swift'/>
+        <documentation relative-path='optionals4.html'/>
+        <code source-file-name='section-7.swift'/>
     </sections>
     <timeline fileName='timeline.xctimeline'/>
 </playground>

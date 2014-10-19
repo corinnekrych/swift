@@ -19,16 +19,23 @@ if let name = optionalName {
 // 3. optional chaining
 // do not unwrap optionals if not needed, work with then
 
-//if let a = m() {
-//    if let u = a.la1 {
-//        if let o = u.la1 {
-//            // and so on
-//        }
-//    }
-//}
+class Person {
+    var residence: Residence?
+}
 
-// Using implicitly unwrapped optionals.
-// These can be nil just like a normal optional, but is automatically unwrapped when it is used, which may result in a runtime error (exactly as if you had placed an exclamation point after the variable).
+class Residence {
+    var numberOfRooms = 1
+}
+
+let john = Person()
+
+if let roomCount = john.residence?.numberOfRooms {
+    println("John's residence has \(roomCount) room(s).")
+} else {
+    println("Unable to retrieve the number of rooms.")
+}
+
+
 
 func toInt(first:String!) -> Int! {
     return Int(first.toInt()!)
