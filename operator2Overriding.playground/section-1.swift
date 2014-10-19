@@ -1,4 +1,4 @@
-// overloading
+// overriding
 func +(left: [Int], right: [Int]) -> [Int] {
     var sum = [Int]()
     assert(left.count == right.count, "vector of same length only")

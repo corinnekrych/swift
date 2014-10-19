@@ -55,6 +55,7 @@ func concatenate(xs: [String]) -> String {
 let namesString = concatenate(names)
 namesString
 
+// with generics
 func reduce<A, R>(arr: [A], initialValue: R, combine: (R, A) -> R) -> R {    var result = initialValue
     for i in arr {        result = combine(result, i)
     }    return result
@@ -69,4 +70,4 @@ namesString2
 println("\(namesString2)")
         
 
-
+// Going surthe
