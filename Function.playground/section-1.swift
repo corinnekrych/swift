@@ -2,8 +2,8 @@
 //Higher Order Function — Functions can be passed as arguments to other functions, and can be returned from other functions.
 func myMap(array: [Int], callback: (Int) -> Int) -> [Int] {
     var newarray = [Int]()
-    for i in 0..<array.count {
-        newarray += [callback(array[i])]
+    for elt in array {
+        newarray += [callback(elt)]
     }
     return newarray
 }
@@ -57,7 +57,7 @@ linear(2)
 
 // full power with Generics
 
-func myGenericMap<T, U>(array: [T], callback: (T) -> U) -> [U] {
+func myGenericMap<T, U>(array: [T], callback: T -> U) -> [U] {
     var newarray: [U] = [U]()
     for i in 0..<array.count {
         newarray += [callback(array[i])]
@@ -67,12 +67,6 @@ func myGenericMap<T, U>(array: [T], callback: (T) -> U) -> [U] {
 let output = myGenericMap(["hello", "coucou"]) {$0+"!"}
 output
 
-// Already exist on Array
-let out = inputArray.map({$0*$0})
-out
 
-// Global function
-let out2 = map(inputArray) {$0*$0}
-out2
 
 

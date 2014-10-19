@@ -18,5 +18,55 @@ SwiftZ Dollar
 https://github.com/pNre/ExSwift
 
 https://github.com/ankurp/Dollar.swift
-
 */
+
+//Let's take a tour some of the higher-order functions on arrays from the Swift standard library.
+
+// 1. Map
+
+// Already exist on Array
+let inputArray = [1, 2, 3, 4, 5]
+let out = inputArray.map({$0*$0})
+out
+
+// Global function
+let out2 = map(inputArray) {$0*$0}
+out2
+
+// 2. Filter
+var names = ["Emile", "Agathe", "Eglantine", "Simon"]
+func filter<T>(xs: [T], check: T -> Bool) -> [T] {
+    var result: [T] = []
+    for x in xs {        if check(x) {            result.append(x)
+        }    }    return result
+}
+
+let filetredNames = filter(names) {!$0.hasPrefix("E")}
+
+// of course filter is already there
+let withoutE = names.filter {!$0.hasPrefix("E")}
+withoutE
+
+// 3. Reduce
+func concatenate(xs: [String]) -> String {
+    var result: String = ""    for x in xs {        result += x
+    }    return result
+}
+let namesString = concatenate(names)
+namesString
+
+func reduce<A, R>(arr: [A], initialValue: R, combine: (R, A) -> R) -> R {    var result = initialValue
+    for i in arr {        result = combine(result, i)
+    }    return result
+}
+
+func concatUsingReduce(xs: [String]) -> String {
+    return reduce(xs, "", +)
+}
+let namesString2 = concatUsingReduce(names)
+namesString2
+
+println("\(namesString2)")
+        
+
+
