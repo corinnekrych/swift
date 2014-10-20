@@ -11,3 +11,6 @@
 
 // http://www.russbishop.net/swift-function-currying
 // Russ Bishop
+
+// map filter reduce
+//https://www.ics.uci.edu/~pattis/ICS-31/lectures/functionsasdata/functionsasdata.txt
