@@ -6,6 +6,8 @@
 
 // www.raywenderlich.com tutorial
 
+// Dan bevenius
+// http://dbevenius.org/
 
 // http://www.russbishop.net/swift-function-currying
 // Russ Bishop

@@ -5,8 +5,6 @@
         <code source-file-name='section-2.swift'/>
         <documentation relative-path='basic2.html'/>
         <code source-file-name='section-4.swift'/>
-        <documentation relative-path='basic3.html'/>
-        <code source-file-name='section-6.swift'/>
     </sections>
     <timeline fileName='timeline.xctimeline'/>
 </playground>

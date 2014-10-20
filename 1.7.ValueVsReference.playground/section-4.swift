@@ -1,12 +1,12 @@
 
-//class Rectangle {
-struct Rectangle {
-    var length: Int = 0
-    var breadth: Int = 0
-}
-var rectangle1 = Rectangle()
-rectangle1.length = 12
-var rectangle2 = rectangle1
-rectangle2.length = 24
-println(rectangle1.length)
-println(rectangle2.length)
+var rectanglesList1 = [rectangle1, rectangle2]
+var rectanglesList2 = rectanglesList1
+rectanglesList2.append(Rectangle())
+rectanglesList2[1].length = 15
+rectanglesList1
+rectanglesList2
+
+// Rectangle by Reference
+// Array by value
+
+

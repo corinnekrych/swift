@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <playground version='3.0' sdk='iphonesimulator'>
     <sections>
+        <documentation relative-path='function-1.html'/>
         <code source-file-name='section-1.swift'/>
+        <documentation relative-path='function-2.html'/>
+        <code source-file-name='section-2.swift'/>
+        <documentation relative-path='function-3.html'/>
+        <code source-file-name='section-3.swift'/>
+        <documentation relative-path='function-4.html'/>
+        <code source-file-name='section-4.swift'/>
+        <documentation relative-path='function-5.html'/>
+        <code source-file-name='section-5.swift'/>
+        <documentation relative-path='function-6.html'/>
+        <code source-file-name='section-6.swift'/>
+        <documentation relative-path='function-7.html'/>
+        <code source-file-name='section-7.swift'/>
     </sections>
     <timeline fileName='timeline.xctimeline'/>
 </playground>

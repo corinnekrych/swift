@@ -1,16 +1,26 @@
-// Value type vs Reference type
-var i = 1
-var j = i
 
-j = 2
-i
-j
-
-class Person {
-    var name:String = "Rachel"
+class Rectangle {
+    var length: Int = 0
+    var width: Int = 0
 }
-let rachel = Person()
-var rachelle = rachel
-rachelle.name = "Rachelle"
-rachel
-rachelle
+var rectangle1 = Rectangle()
+rectangle1.length = 12
+var rectangle2 = rectangle1
+rectangle2.length = 24
+println(rectangle1.length)
+println(rectangle2.length)
+
+
+struct EquilateralTriangle {
+    var length: Int = 0
+}
+
+var triangle1 = EquilateralTriangle()
+triangle1.length = 10
+var triangle2 = triangle1
+triangle1.length = 12
+
+println(triangle1.length)
+println(triangle2.length)
+
+
