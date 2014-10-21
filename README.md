@@ -12,6 +12,6 @@ open swift.xcworkspace
 ```
 ### Go through interactive playground
 
-![worspace](/Resuorces/img/xcode_playground.png)
+![worspace](/Resources/img/xcode_playground.png)
 
 Happy Swifting!
