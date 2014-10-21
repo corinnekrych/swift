@@ -1,11 +1,5 @@
 
-// https://medium.com/swift-programming/facets-of-swift-part-5-custom-operators-1080bc78ccc
-// http://www.raywenderlich.com/80818/operator-overloading-in-swift-tutorial
-// Mathematics operator
 var simpleSum = 1 + 3
-
-// Precedence and associativity
-var sumWithMultiplication = 1 + 3 - 3 * 2
 
 // Array addition ??
 var sumArray = [1, 2] + [1, 2]
@@ -26,7 +20,3 @@ func add(left: [Int], right: [Int]) -> [Int] {
 var arr1 = [1, 1]
 var arr2 = [1, 1]
 var arr3 = add(arr1, arr2)
-
-
-
-
