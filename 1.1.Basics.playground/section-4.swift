@@ -20,7 +20,7 @@ strings.filter { (string: String) -> Bool in
 
 strings.filter { $0.hasPrefix("A") }
 
-let luckyNumbers = ["Ash": 17, "Samuel": 11, "Marga": 1337]
+let luckyNumbers = ["Corinne": 17, "Isa": 11, "Lea": 1337]
 
 for (key, value) in luckyNumbers {
     println("The lucky number of \(key) is \(value)")
