@@ -1,6 +1,4 @@
 
-println("hello world")
-
 let name = "Corinne"
 let age = 18
 println(name)
