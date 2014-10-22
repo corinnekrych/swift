@@ -2,7 +2,7 @@
 <playground version='3.0' sdk='iphonesimulator'>
     <sections>
         <documentation relative-path='op-1.html'/>
-        <code source-file-name='section-1.swift'/>
+        <code source-file-name='section-2.swift'/>
         <documentation relative-path='op-2.html'/>
     </sections>
     <timeline fileName='timeline.xctimeline'/>

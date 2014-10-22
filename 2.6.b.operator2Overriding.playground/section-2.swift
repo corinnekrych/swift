@@ -1,8 +1,8 @@
-// overriding
+
 func +(left: [Int], right: [Int]) -> [Int] {
     var sum = [Int]()
     assert(left.count == right.count, "vector of same length only")
-    for (key, v) in enumerate(left) {
+    for (key, _) in enumerate(left) {
       sum.append(left[key] + right[key])
     }
     return sum
