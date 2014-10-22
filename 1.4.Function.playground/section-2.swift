@@ -1,10 +1,5 @@
 
-func returnFifteen() -> Int {
-    var y = 10
-    func add() {
-        y += 5
-    }
-    add()
-    return y
+func greet(name: String, day: String) -> String {
+    return "Hello \(name), today is \(day)."
 }
-returnFifteen()
+greet("Bob", "Tuesday")
