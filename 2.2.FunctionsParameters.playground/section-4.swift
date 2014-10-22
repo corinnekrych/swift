@@ -1,10 +1,12 @@
 
-// 4. Init
-class GreetingPolyglot {
-    var language:String
-    init(language: String) {
-        self.language = language
-    }
+func hello(first firstname: String, last lastname: String, age age: Int, loc location: String) -> String {
+    return "Hello \(firstname) \(lastname). I live in \(location) too. When is your \(age + 1)th birthday?"
 }
-let frenchGreeting = GreetingPolyglot(language: "french")
-// why?
+
+hello(first: "Isabel", last: "Dupont", age: 5, loc: "Geneve")
+
+func hello(#firstname: String, #lastname: String, #age: Int, #location: String) -> String {
+    return "Hello \(firstname) \(lastname). I live in \(location) too. When is your \(age + 1)th birthday?"
+}
+
+hello(firstname: "Isabel", lastname: "Dupont", age: 5, location: "Geneve")
