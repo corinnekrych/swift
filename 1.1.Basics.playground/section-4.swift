@@ -14,10 +14,6 @@ strings.map({ (string: String) -> Void in
     println(string)
 })
 
-strings.map { (string: String) -> Void in
-    println(string)
-}
-
 strings.filter { (string: String) -> Bool in
     return string.hasPrefix("A")
 }
