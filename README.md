@@ -2,6 +2,8 @@ swift
 =====
 
 Tell me about Swift in a nutshell... Show me in playground!
+This presentation was given at [SoftShake 2014](http://soft-shake.ch/2014/en/).
+It runs on Xcode 6.1.
 
 ### How to use it
 
