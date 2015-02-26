@@ -3,10 +3,10 @@
 //: - map (transform),
 //: - filter,
 //: - and reduce (accumulate).
-            
+//: ----            
 //: # Map
 //: map/transform: this function takes a unary function and a list and produces a same-sized list of mapped/transformed values based on substituting each value with the result of calling the parameter function on it. </p>
-// #### Not only closures
+//: #### Not only closures
 //: Note that closures are frequently (but not exclusively) used in calls to the map function. We can use regularly defined functions as well, but often we need only a short function, so lambdas often work out well.
 
 func map(array: [Int], callback: (Int) -> Int) -> [Int] {

@@ -1,8 +1,2 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<playground version='1.0' sdk='iphonesimulator'>
-    <sections>
-        <documentation relative-path='introduction1.html'/>
-        <code source-file-name='section-1.swift'/>
-        <documentation relative-path='introduction2.html'/>
-    </sections>
-</playground>
+<playground version='5.0' target-platform='ios' display-mode='rendered'/>

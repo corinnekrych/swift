@@ -1,18 +1,2 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<playground version='3.0' sdk='iphonesimulator'>
-    <sections>
-        <documentation relative-path='monad-1.html'/>
-        <code source-file-name='section-2.swift'/>
-        <documentation relative-path='monad-2.html'/>
-        <code source-file-name='section-4.swift'/>
-        <documentation relative-path='monad-3.html'/>
-        <code source-file-name='section-6.swift'/>
-        <documentation relative-path='monad-4.html'/>
-        <code source-file-name='section-8.swift'/>
-        <documentation relative-path='monad-5.html'/>
-        <code source-file-name='section-10.swift'/>
-        <documentation relative-path='monad-6.html'/>
-        <code source-file-name='section-12.swift'/>
-    </sections>
-    <timeline fileName='timeline.xctimeline'/>
-</playground>
+<playground version='5.0' target-platform='ios' display-mode='rendered'/>

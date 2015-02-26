@@ -59,9 +59,6 @@
       location = "group:2.6.d.operator4Generics.playground">
    </FileRef>
    <FileRef
-      location = "group:3.1.Ready.playground">
-   </FileRef>
-   <FileRef
       location = "group:3.2.Interoperability.playground">
    </FileRef>
    <FileRef
