@@ -32,3 +32,5 @@ manager.storeData("text")
 let dataStoreInt = InMemoryDataStore<Int>()
 let managerInt = Manager(dataStore: dataStoreInt)
 managerInt.storeData(123456)
+managerInt
+

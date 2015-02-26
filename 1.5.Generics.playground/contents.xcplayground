@@ -2,19 +2,19 @@
 <playground version='3.0' sdk='iphonesimulator'>
     <sections>
         <documentation relative-path='generics-1.html'/>
-        <code source-file-name='section-1.swift'/>
-        <documentation relative-path='generics-2.html'/>
         <code source-file-name='section-2.swift'/>
-        <documentation relative-path='generics-3.html'/>
-        <code source-file-name='section-3.swift'/>
-        <documentation relative-path='generics-4.html'/>
+        <documentation relative-path='generics-2.html'/>
         <code source-file-name='section-4.swift'/>
-        <documentation relative-path='generics-5.html'/>
-        <code source-file-name='section-5.swift'/>
-        <documentation relative-path='generics-6.html'/>
+        <documentation relative-path='generics-3.html'/>
         <code source-file-name='section-6.swift'/>
+        <documentation relative-path='generics-4.html'/>
+        <code source-file-name='section-8.swift'/>
+        <documentation relative-path='generics-5.html'/>
+        <code source-file-name='section-10.swift'/>
+        <documentation relative-path='generics-6.html'/>
+        <code source-file-name='section-12.swift'/>
         <documentation relative-path='generics-7.html'/>
-        <code source-file-name='section-7.swift'/>
+        <code source-file-name='section-14.swift'/>
     </sections>
     <timeline fileName='timeline.xctimeline'/>
 </playground>

@@ -1,5 +1,5 @@
 
-for var i = 0; i < countElements(strings); i++ {
+for var i = 0; i < count(strings); i++ {
     println(strings[i])
 }
 // Note: open the side bar
