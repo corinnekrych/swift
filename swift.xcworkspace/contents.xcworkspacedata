@@ -32,6 +32,9 @@
       location = "group:1.7.ValueVsReference.playground">
    </FileRef>
    <FileRef
+      location = "group:1.7.1.EnumWithSwiftyJSON.playground">
+   </FileRef>
+   <FileRef
       location = "group:2.1.MapReduceFilter.playground">
    </FileRef>
    <FileRef
