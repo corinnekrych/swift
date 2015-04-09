@@ -57,7 +57,7 @@ morning.hello("Isabel", lastname: "Dupont", age: 5, location: "Geneve")
 // idea rename method helloWithName
 // add _ or #
 
-//: #Init
+//: # Init
 //: Special case :)
 
 
