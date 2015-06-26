@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' requires-full-environment='true' display-mode='rendered'>
+    <pages>
+        <page name='Presentation'/>
+        <page name='Introduction'/>
+        <page name='Agenda'/>
+        <page name='1.1.Basics'/>
+        <page name='1.2.Optionals'/>
+        <page name='1.3.Tuple'/>
+        <page name='1.4.Function'/>
+        <page name='1.5.Generics'/>
+        <page name='1.6.Classes'/>
+        <page name='1.7.ValueVsReference'/>
+        <page name='1.7.1.EnumWithSwiftyJSON'/>
+        <page name='2.1.MapReduceFilter'/>
+        <page name='2.2.FunctionParameters'/>
+        <page name='2.3.FunctionCurrying'/>
+        <page name='2.4.Monad'/>
+        <page name='2.5.Extension'/>
+        <page name='2.6.1.OperatorGlobalFunctions'/>
+        <page name='2.6.2.OperatorOverriding'/>
+        <page name='2.6.3.OperatorCustom'/>
+        <page name='2.6.4.OperatorGenerics'/>
+        <page name='3.Interoperability'/>
+        <page name='TheEnd'/>
+    </pages>
+</playground>
