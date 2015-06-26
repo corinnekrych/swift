@@ -42,7 +42,7 @@ public enum JSON {
     //private type sequence
     case Sequence(Array<JSON>)
     //private type mapping
-    case Mapping(Dictionary<String, JSON>)
+    case Mapping([String: JSON])
     //private type null
     case Null(NSError?)
     
