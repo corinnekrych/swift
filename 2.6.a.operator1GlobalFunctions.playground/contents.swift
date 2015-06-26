@@ -14,10 +14,10 @@ var sumArray = [1, 2] + [1, 2]
 var minusArray = [1, 2] - [1, 2]
 
 // Global func vs operator
-func add(left: [Int], right: [Int]) -> [Int] {
+func add(left: [Int], _ right: [Int]) -> [Int] {
     var sum = [Int]()
     assert(left.count == right.count, "vector of same length only")
-    for (key, v) in enumerate(left) {
+    for (key, _) in left.enumerate() {
         sum.append(left[key] + right[key])
     }
     return sum

@@ -7,7 +7,7 @@
 func +(left: [Int], right: [Int]) -> [Int] {
     var sum = [Int]()
     assert(left.count == right.count, "vector of same length only")
-    for (key, _) in enumerate(left) {
+    for (key, _) in left.enumerate() {
       sum.append(left[key] + right[key])
     }
     return sum
@@ -17,7 +17,7 @@ var sumArray1 = [1, 2, 3] + [1, 2, 3]
 func -(left: [Int], right: [Int]) -> [Int] {
     var minus = [Int]()
     assert(left.count == right.count, "vector of same length only")
-    for (key, v) in enumerate(left) {
+    for (key, _) in left.enumerate() {
         minus.append(left[key] - right[key])
     }
     return minus
@@ -25,7 +25,7 @@ func -(left: [Int], right: [Int]) -> [Int] {
 var minusArray2 = [1, 2, 3] - [1, 2, 3]
 minusArray2 = [1, 2, 3] - [0, -2, 4]
 
-//: ![](Resources/OperatorRage.png)
+//: ![Operator rage](OperatorRage.png)
 //: #### Remember the operator overloading mantra
 //:
 //: *With great power comes great responsibility.*

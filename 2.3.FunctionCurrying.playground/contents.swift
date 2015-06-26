@@ -30,7 +30,7 @@ func greetShoftShake(firstname: String, lastname: String) -> String {
     return greetings(firstname)(lastname)("Thursday 23rd October")("Geneva")
 }
 
-greetShoftShake("Eloise", "Dupont")
+greetShoftShake("Eloise", lastname: "Dupont")
 
 //: #### with some syntactic sugar:
 

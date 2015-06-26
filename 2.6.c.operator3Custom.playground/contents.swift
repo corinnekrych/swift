@@ -11,7 +11,7 @@ infix operator ⊕ { associativity left precedence 140 }
 func ⊕(left: [Int], right: [Int]) -> [Int] {
     var minus = [Int]()
     assert(left.count == right.count, "vector of same length only")
-    for (key, v) in enumerate(left) {
+    for (key, _) in left.enumerate() {
         minus.append(left[key] + right[key])
     }
     return minus
@@ -21,7 +21,7 @@ infix operator  ⊖ { associativity left precedence 140 }
 func ⊖(left: [Int], right: [Int]) -> [Int] {
     var minus = [Int]()
     assert(left.count == right.count, "vector of same length only")
-    for (key, v) in enumerate(left) {
+    for (key, _) in left.enumerate() {
         minus.append(left[key] - right[key])
     }
     return minus
@@ -44,7 +44,7 @@ sumArray3 ⊕= [1, 1, 1]
 
 func -(left: [Int], right: [Int]) -> [Int] {
     var minus = [Int]()
-    minus = left.filter {!contains(right, $0)}
+    minus = left.filter {!right.contains($0)}
     return minus
 }
 

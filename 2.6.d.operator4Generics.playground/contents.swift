@@ -15,7 +15,7 @@ infix operator ⊕ { associativity left precedence 140 }
 func ⊕<T: Number>(left: [T], right: [T]) -> [T] {
     var minus = [T]()
     assert(left.count == right.count, "vector of same length only")
-    for (key, v) in enumerate(left) {
+    for (key, _) in left.enumerate() {
         minus.append(left[key] + right[key])
     }
     return minus

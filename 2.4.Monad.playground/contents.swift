@@ -20,7 +20,7 @@ var data = jsonString.dataUsingEncoding(NSUTF8StringEncoding)
 // Get Data to serialized into Json object
 var jsonObject: AnyObject?
 if let unwrappedData = data {
-    jsonObject = NSJSONSerialization.JSONObjectWithData(unwrappedData, options: nil, error: nil)
+    jsonObject = try! NSJSONSerialization.JSONObjectWithData(unwrappedData, options: NSJSONReadingOptions.MutableContainers)
 }
 
 jsonObject
@@ -34,7 +34,7 @@ struct User {
 }
 
 func callback(name: String)(user: User) -> () {
-    println("\(name):::User is \(user.name) with email \(user.email)")
+    print("\(name):::User is \(user.name) with email \(user.email)")
 }
 
 //: #### How o do in Swift
@@ -147,7 +147,7 @@ func <*><A, B>(f: (A -> B)?, a: A?) -> B? {
 }
 
 func withApplyCallback(person: Person) {
-    println("Person is:\(person.name) with email\(person.email)")
+    print("Person is:\(person.name) with email\(person.email)")
 }
 
 if let json = jsonObject >>> JSONObject {

@@ -82,10 +82,10 @@ func reduce<A, R>(arr: [A], initialValue: R, combine: (R, A) -> R) -> R {
 }
 
 func concatUsingReduce(xs: [String]) -> String {
-    return reduce(xs, "", +)
+    return reduce(xs, initialValue: "", combine: +)
 }
 
 let namesString2 = concatUsingReduce(names)
 namesString2
 
-println("\(namesString2)")
+print("\(namesString2)")

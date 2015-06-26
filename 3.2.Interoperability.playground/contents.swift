@@ -2,7 +2,7 @@
 //:
 //: Objective-C and Swift files can coexist in a single project, whether the project was originally an Objective-C or Swift project.
 //:
-//: ![](Resources/DAG_2x.png)
+//: ![interoperability](DAG_2x.png)
 //: 
 //: #### Using Obj-C in your Swift project
 //:
