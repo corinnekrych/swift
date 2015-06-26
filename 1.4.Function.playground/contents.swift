@@ -6,7 +6,7 @@
 func greet(name: String, day: String) -> String {
     return "Hello \(name), today is \(day)."
 }
-greet("Bob", "Tuesday")
+greet("Bob", day: "Tuesday")
 
 //: # Nested Function
 //: Functions can be nested.  <br>
@@ -54,7 +54,7 @@ func map(array: [Int], callback: (Int) -> Int) -> [Int] {
 
 let inputArray = [1, 2, 3, 4, 5]
 
-let outArray = map(inputArray, {(element: Int) -> Int in
+let outArray = map(inputArray, callback: {(element: Int) -> Int in
     return element * element
 })
 outArray

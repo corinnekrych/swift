@@ -1,2 +1,2 @@
 
-//: ![](Resources/presentation_soft_shake.png)
+//: ![me](presentation_soft_shake.png)

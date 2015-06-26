@@ -2,13 +2,13 @@
 //: #### What is the problem we're trying to solve?
 
 
-func swapTwoInts(inout a: Int, inout b: Int) {
+func swapTwoInts(inout a: Int, inout _ b: Int) {
     let temporaryA = a
     a = b
     b = temporaryA
 }
 
-func swapTwoStrings(inout a: String, inout b: String) {
+func swapTwoStrings(inout a: String, inout _ b: String) {
     let temporaryA = a
     a = b
     b = temporaryA
@@ -16,20 +16,20 @@ func swapTwoStrings(inout a: String, inout b: String) {
 
 var someInt = 3
 var anotherInt = 107
-println("someInt is now \(someInt), and anotherInt is now \(anotherInt)")
+print("someInt is now \(someInt), and anotherInt is now \(anotherInt)")
 swapTwoInts(&someInt, &anotherInt)
-println("someInt is now \(someInt), and anotherInt is now \(anotherInt)")
+print("someInt is now \(someInt), and anotherInt is now \(anotherInt)")
 
 //: #### Let's make it generic!
 
-func swapTwoValues<T>(inout a: T, inout b: T) {
+func swapTwoValues<T>(inout a: T, inout _ b: T) {
     let temporaryA = a
     a = b
     b = temporaryA
 }
 
 swapTwoValues(&someInt, &anotherInt)
-println("someInt is now \(someInt), and anotherInt is now \(anotherInt)")
+print("someInt is now \(someInt), and anotherInt is now \(anotherInt)")
 
 //: # Generic Functions
 //: ```swap``` actually already exists as global function.
@@ -44,13 +44,13 @@ println("someInt is now \(someInt), and anotherInt is now \(anotherInt)")
 //: A built-in function is available in Swift without importing any modules (such as Foundation, etc.) or referencing any classes.
 
 swap(&someInt, &anotherInt)
-println("someInt is now \(someInt), and anotherInt is now \(anotherInt)")
+print("someInt is now \(someInt), and anotherInt is now \(anotherInt)")
 
 //: # Type parameter.
 //: #### UpperCameCase for type
 //: Always give type parameters UpperCamelCase names (such as T and Key) to indicate that they are a placeholder for a type, not a value.
 
-func anyCommonElements <T, U where T: SequenceType, U: SequenceType, T.Generator.Element: Equatable, T.Generator.Element == U.Generator.Element> (lhs: T, rhs: U) -> Bool {
+func anyCommonElements <T, U where T: SequenceType, U: SequenceType, T.Generator.Element: Equatable, T.Generator.Element == U.Generator.Element> (lhs: T, _ rhs: U) -> Bool {
     for lhsItem in lhs {
         for rhsItem in rhs {
             if lhsItem == rhsItem {
@@ -79,8 +79,8 @@ struct Stack<T> {
 //: # Type constraints
 //: Type Constraints, enable you to define requirements on the type parameters associated with a generic function or type.
 
-func findIndex<T where T: Equatable>(array: [T], valueToFind: T) -> Int? {
-    for (index, value) in enumerate(array) {
+func findIndex<T where T: Equatable>(array: [T], _ valueToFind: T) -> Int? {
+    for (index, value) in array.enumerate() {
         if value == valueToFind {
             return index
         }
@@ -107,7 +107,7 @@ public class InMemoryDataStore<T>: DataStore {
     typealias ContentType = T
     public init() {}
     public func save(data: ContentType) -> Bool {
-        println("Saving data: \(data)")
+        print("Saving data: \(data)")
         return true;
     }
 }

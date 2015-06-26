@@ -1,6 +1,6 @@
 //: # An Optional is a box
 //:
-//: ![](Resources/box.jpg)
+//: ![Box](box.jpg)
 //: 
 //: Optionals is an enum to say "I have something" or "it's empty". You can picture it as a box which can be empty or contain something. It's just a box, to know what's inside you need to unwrap it. When defining an optional type, use ?, when unwrapping it, use !.
 //: 
@@ -34,7 +34,7 @@ var j: Int?
 var kitty: String? = "Kitty"
 var greeting = "Hello \(kitty)"     // No compiler error!
 print("Hello")
-println(kitty)      // Also fine.
+print(kitty)      // Also fine.
 //var nope = "Hello " + kitty         // Compiler error
 
 //: # Different ways of unwrapping
@@ -75,9 +75,9 @@ class Residence {
 let john = Person()
 
 if let roomCount = john.residence?.numberOfRooms {
-    println("John's residence has \(roomCount) room(s).")
+    print("John's residence has \(roomCount) room(s).")
 } else {
-    println("Unable to retrieve the number of rooms.")
+    print("Unable to retrieve the number of rooms.")
 }
    
 //: #### Caution when unwrapping
@@ -85,7 +85,7 @@ if let roomCount = john.residence?.numberOfRooms {
 //: Check first or use optional chaining
 
 func toInt(first:String!) -> Int! {
-    return Int(first.toInt()!)
+    return Int(first)!
 }
 var myIn:Int = toInt("3")
 // var myIn:Int = toInt("3e") // runtime error

@@ -23,8 +23,8 @@ var rectangle1 = Rectangle()
 rectangle1.length = 12
 var rectangle2 = rectangle1
 rectangle2.length = 24
-println(rectangle1.length)
-println(rectangle2.length)
+print(rectangle1.length)
+print(rectangle2.length)
 
 
 struct EquilateralTriangle {
@@ -36,8 +36,8 @@ triangle1.length = 10
 var triangle2 = triangle1
 triangle1.length = 12
 
-println(triangle1.length)
-println(triangle2.length)
+print(triangle1.length)
+print(triangle2.length)
 
 //: #### By reference or by value?
 //: Basics types, as Int, are value types, but in Swift the data structures like Array and Dictionary  <br/>

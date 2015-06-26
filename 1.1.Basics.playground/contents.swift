@@ -10,8 +10,8 @@
 
 let name = "julie"
 let age = 18
-println(name)
-println("Hello my name is \(name) and I am \(age) years old")
+print(name)
+print("Hello my name is \(name) and I am \(age) years old")
 // Talk about type inference
 
 var number = 3
@@ -31,19 +31,19 @@ let strings = ["Corinne", "Isabel", "1"]
 
 //: # Collections and fast enumeration
 
-for var i = 0; i < count(strings); i++ {
-    println(strings[i])
+for var i = 0; i < strings.count; i++ {
+    print(strings[i])
 }
 // Note: open the side bar
 
 // Fast enumeration
 for string in strings {
-    println(string)
+    print(string)
 }
 
 // ".each" based
 strings.map({ (string: String) -> Void in
-    println(string)
+    print(string)
 })
 
 strings.filter { (string: String) -> Bool in
@@ -55,7 +55,7 @@ strings.filter { $0.hasPrefix("A") }
 let luckyNumbers = ["Corinne": 17, "Isa": 11, "Lea": 1337]
 
 for (key, value) in luckyNumbers {
-    println("The lucky number of \(key) is \(value)")
+    print("The lucky number of \(key) is \(value)")
 }
 
 //: # Control flows
@@ -63,18 +63,18 @@ for (key, value) in luckyNumbers {
 let lg = "french"
 for i in 1...3 {
     if lg == "french" {
-        println("Bonjour!")
+        print("Bonjour!")
     }
     if (lg == "german") {
-        println("Goten tag")
+        print("Goten tag")
     }
 }
 
 var direction = "up"
 switch direction {
-    case "down": println("Going Down!")
-    case "up": println("Going Up!")
-    default: println("Going Nowhere")
+    case "down": print("Going Down!")
+    case "up": print("Going Up!")
+    default: print("Going Nowhere")
 }
 
 

@@ -28,7 +28,7 @@ http://www.binpress.com/tutorial/swiftyjson-how-to-handle-json-in-swift/111
 
 import Foundation
 
-@availability(*, unavailable, renamed="JSON")
+@available(*, unavailable, renamed="JSON")
 public typealias JSONValue = JSON
 
 //MARK:- Base
@@ -52,7 +52,7 @@ public enum JSON {
     :param: error The NSErrorPointer used to return the error.
     */
     public init(data:NSData, options opt: NSJSONReadingOptions = .AllowFragments, error: NSErrorPointer = nil) {
-        if let object: AnyObject = NSJSONSerialization.JSONObjectWithData(data, options: opt, error: error){
+        if let object: AnyObject = try! NSJSONSerialization.JSONObjectWithData(data, options: opt){
             self = JSON(object: object)
         } else {
             self = .Null(nil)
@@ -68,7 +68,7 @@ public enum JSON {
             self = .ScalarNumber(number)
         case let string as NSString:
             self = .ScalarString(string)
-        case let null as NSNull:
+        case  _ as NSNull:
             self = .Null(nil)
         case let array as NSArray:
             var jsonArray = Array<JSON>()
@@ -78,13 +78,13 @@ public enum JSON {
             self = .Sequence(jsonArray)
         case let dictionary as NSDictionary:
             var jsonDictionary = Dictionary<String, JSON>()
-            for (key : AnyObject, value : AnyObject) in dictionary {
+            for (key, value) in dictionary {
                 if let key = key as? NSString {
                     jsonDictionary[key as String] = JSON(object: value)
                 }
             }
             self = .Mapping(jsonDictionary)
-        case let null as NSNull:
+        case  _ as NSNull:
             self = .Null(nil)
         default:
             self = .Null(NSError(domain: ErrorDomain, code: 0, userInfo: [NSLocalizedDescriptionKey: "It is a unsupported type"]))
@@ -139,7 +139,7 @@ extension JSON {
             return retArray
         case .Mapping(let dictionary):
             var retDicitonary = Dictionary<String, AnyObject>()
-            for (key : String, value : JSON) in dictionary {
+            for (key, value) in dictionary {
                 if let object: AnyObject = value.object{
                     retDicitonary[key] = object
                 }
@@ -188,7 +188,7 @@ extension JSON {
 }
 
 //MARK: - Printable, DebugPrintable
-extension JSON: Printable, DebugPrintable {
+extension JSON: CustomStringConvertible, CustomDebugStringConvertible {
     
     public var description: String {
         switch self {
@@ -776,12 +776,12 @@ var jsonString = "[{\"id\":1, \"name\": \"Eliott\", \"email\": \"eliott@gmail.co
 "{\"id\":2, \"name\": \"Emilie\", \"email\": \"emilie@gmail.com\"}]"
 var data = jsonString.dataUsingEncoding(NSUTF8StringEncoding)
 
-let jsonObject: AnyObject! = NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers, error: nil)
+let jsonObject: AnyObject! = try! NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers)
 // Handling JSON in Swift with optional and type casting
 if let personsArray = jsonObject as? NSArray {
     if let firstPerson = personsArray[0] as? NSDictionary {
         if let name = firstPerson["name"] as? NSString {
-            println("First person name is \(name)")
+            print("First person name is \(name)")
         }
     }
 }
@@ -789,5 +789,5 @@ if let personsArray = jsonObject as? NSArray {
 // Using SwiftyJSON
 let json = JSON(data: data!)
 if let userName = json[0]["name"].string {
-    println("First person name is \(userName)")
+    print("First person name is \(userName)")
 }
