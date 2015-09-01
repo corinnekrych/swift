@@ -18,8 +18,5 @@ git clone https://github.com/corinnekrych/swift
 cd swift
 open ToolBox.playground
 ```
-### Go through interactive playground
-
-![workspace](Resources/xcode_playground.png)
 
 Happy Swifting!
