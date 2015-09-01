@@ -19,6 +19,7 @@
         <page name='2.4.1.Functor'/>
         <page name='2.4.Monad'/>
         <page name='2.5.Extension'/>
+        <page name='2.5.1.ProtocolExtension'/>
         <page name='2.6.1.OperatorGlobalFunctions'/>
         <page name='2.6.2.OperatorOverriding'/>
         <page name='2.6.3.OperatorCustom'/>
