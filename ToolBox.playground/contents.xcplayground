@@ -12,9 +12,11 @@
         <page name='1.6.Classes'/>
         <page name='1.7.ValueVsReference'/>
         <page name='1.7.1.EnumWithSwiftyJSON'/>
+        <page name='2.FunctionalApproach'/>
         <page name='2.1.MapReduceFilter'/>
         <page name='2.2.FunctionParameters'/>
         <page name='2.3.FunctionCurrying'/>
+        <page name='2.4.1.Functor'/>
         <page name='2.4.Monad'/>
         <page name='2.5.Extension'/>
         <page name='2.6.1.OperatorGlobalFunctions'/>
@@ -22,6 +24,7 @@
         <page name='2.6.3.OperatorCustom'/>
         <page name='2.6.4.OperatorGenerics'/>
         <page name='3.Interoperability'/>
+        <page name='4.Swift2'/>
         <page name='TheEnd'/>
     </pages>
 </playground>

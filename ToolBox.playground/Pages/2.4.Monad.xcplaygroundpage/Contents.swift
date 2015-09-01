@@ -39,7 +39,7 @@ func callback(name: String)(user: User) -> () {
     print("\(name):::User is \(user.name) with email \(user.email)")
 }
 
-//: #### How o do in Swift
+//: #### How to do in Swift
 
 let unwrappingCallback = callback("unwrapping")
 
