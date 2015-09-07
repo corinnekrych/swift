@@ -7,18 +7,18 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>1803E7B5-72BC-4BC5-9266-958EF45A3161</string>
 	<key>IDESourceControlProjectName</key>
-	<string>ToolBox</string>
+	<string>playground</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>3DB64DF63A12CDF8DDE9F64A163016CDC11A4F05</key>
 		<string>github.com:corinnekrych/swift.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>ToolBox.playground</string>
+	<string>ToolBox.playground/playground.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>3DB64DF63A12CDF8DDE9F64A163016CDC11A4F05</key>
-		<string>..</string>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>github.com:corinnekrych/swift.git</string>
