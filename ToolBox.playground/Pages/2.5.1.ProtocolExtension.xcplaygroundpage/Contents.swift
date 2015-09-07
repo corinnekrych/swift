@@ -33,7 +33,7 @@ extension Array {
 }
 
 let maxInt = [1, 3, 4, 24].max
-
+let maxDouble = [10.2, 3.9, 4.0, 24.3].max
 //: Notice the downcast to Int type. Not good.
 
 //: # With Swift2.0, extension with type constraints
