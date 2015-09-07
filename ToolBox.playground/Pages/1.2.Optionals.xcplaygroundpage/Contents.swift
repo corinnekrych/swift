@@ -21,7 +21,25 @@ string == "Test String"
 //: #### Syntactic sugar: **?** and **!**
 //:
 //: short name ? and ! for Optional<T> and ImplicitlyUnwrappedOptional<T> (for which the ‘?’ and ‘!’ type modifiers are syntactic sugar).
-
+typealias StringOrNill = Optional<String>
+/*
+public enum Optional<Wrapped> : _Reflectable, NilLiteralConvertible {
+    case None
+    case Some(Wrapped)
+    /// Construct a `nil` instance.
+    public init()
+    /// Construct a non-`nil` instance that stores `some`.
+    public init(_ some: Wrapped)
+    /// If `self == nil`, returns `nil`.  Otherwise, returns `f(self!)`.
+    @warn_unused_result
+    @rethrows public func map<U>(@noescape f: (Wrapped) throws -> U) rethrows -> U?
+    /// Returns `nil` if `self` is nil, `f(self!)` otherwise.
+    @warn_unused_result
+    @rethrows public func flatMap<U>(@noescape f: (Wrapped) throws -> U?) rethrows -> U?
+    /// Create an instance initialized with `nil`.
+    public init(nilLiteral: ())
+}
+*/
 //: # To unwrap or not to unwrap?
 
 

@@ -104,8 +104,12 @@ func toLowerCase(gorilla: Gorilla2) -> Gorilla2 {
     return goril
 }
 
-let namesString = [julia2, emily2, eva2].map(toUpperCase)
-    .reduce("List of names:", combine: { name, gorilla in name + " " + gorilla.name})
+let namesString = [julia2, emily2, eva2].filter(inRange)
+                                        .map(toUpperCase)
+                                        .reduce("List of names:",
+                                                combine: { name, gorilla in
+                                                    name + " " + gorilla.name
+                                                })
 
 //: ## Function compositiom
 

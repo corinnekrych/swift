@@ -45,16 +45,26 @@ print("Triangle2's length \(tri2.length)")
 
 // different length for tr1 and tr2
 
-struct Drawing {
-    var rect: Rectangle
-    var tr: EquilateralTriangle
-}
-//let d1 = Drawing(rect: rectangle1, tr: triangle1)
 
 
 //: #### By reference or by value?
 //: Basics types, as Int, are value types, but in Swift the data structures like Array and Dictionary  <br/>
 //: are also value types (implemented as Struct behind the scenes).
+import Foundation
+let x: NSMutableString = "Hello"
+let y: NSString = x
+x.appendString(" Kats")
+// Now x and y both point to the string "Hello Kats"
+
+print("x: \(x) y: \(y)")
+
+var x_: String = "Hello"
+let y_: String = x_
+x_ = x_ + " Kats"
+
+print("x: \(x_) y: \(y_)")
+
+// Now x is "Hello" and y is "Hello Kats"
 
 //var rectanglesList1 = [rect1, rect2]
 //var rectanglesList2 = rectanglesList1

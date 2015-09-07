@@ -12,6 +12,7 @@
         <page name='1.6.Classes'/>
         <page name='1.7.ValueVsReference'/>
         <page name='1.7.1.EnumWithSwiftyJSON'/>
+        <page name='1.8.Pattern Matching'/>
         <page name='2.FunctionalApproach'/>
         <page name='2.1.MapReduceFilter'/>
         <page name='2.2.FunctionParameters'/>
