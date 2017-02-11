@@ -1,4 +1,4 @@
-//: [Previous](@previous)
+//: [Table of Contents](Agenda) | [Previous](@previous) | [Next](@next)
 
 //: # Defining Custom Operators
 //:
@@ -13,7 +13,7 @@ infix operator ⊕ { associativity left precedence 140 }
 func ⊕(left: [Int], right: [Int]) -> [Int] {
     var minus = [Int]()
     assert(left.count == right.count, "vector of same length only")
-    for (key, _) in left.enumerate() {
+    for (key, _) in left.enumerated() {
         minus.append(left[key] + right[key])
     }
     return minus
@@ -23,7 +23,7 @@ infix operator  ⊖ { associativity left precedence 140 }
 func ⊖(left: [Int], right: [Int]) -> [Int] {
     var minus = [Int]()
     assert(left.count == right.count, "vector of same length only")
-    for (key, _) in left.enumerate() {
+    for (key, _) in left.enumerated() {
         minus.append(left[key] - right[key])
     }
     return minus
@@ -33,11 +33,11 @@ var minusArray3 = [1, 2, 3] ⊖ [1, 2, 3]
 minusArray3 = [1, 2, 3] ⊖ [0, -2, 4]
 
 infix operator  ⊖= { associativity left precedence 140 }
-func ⊖=(inout left: [Int], right: [Int]) {
+func ⊖=(left: inout [Int], right: [Int]) {
     left = left ⊖ right
 }
 infix operator  ⊕= { associativity left precedence 140 }
-func ⊕=(inout left: [Int], right: [Int]) {
+func ⊕=(left: inout [Int], right: [Int]) {
     left = left ⊕ right
 }
 sumArray3 ⊕= [1, 1, 1]
@@ -57,4 +57,4 @@ var minusArray = [1, 2, 3] - [1] + [5, 7]
 var appendArray = [1, 2] + [3]
 
 
-//: [Next](@next)
+//: [Table of Contents](Agenda) | [Previous](@previous) | [Next](@next)

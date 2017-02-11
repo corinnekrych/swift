@@ -1,4 +1,5 @@
+//: [Table of Contents](Agenda) | [Previous](@previous) | [Next](@next)
 
 //: ![me](presentation_soft_shake.png)
 
-//: [Next](@next)
+//: [Table of Contents](Agenda) | [Previous](@previous) | [Next](@next)

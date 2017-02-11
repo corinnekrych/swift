@@ -1,4 +1,4 @@
-//: [Previous](@previous)
+//: [Table of Contents](Agenda) | [Previous](@previous) | [Next](@next)
 
 //: # Protocol and Extension
 
@@ -48,4 +48,4 @@ extension Int: ExampleProtocol {
 7.simpleDescription
 
 
-//: [Next](@next)
+//: [Table of Contents](Agenda) | [Previous](@previous) | [Next](@next)

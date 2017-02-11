@@ -1,4 +1,4 @@
-//: [Previous](@previous)
+//: [Table of Contents](Agenda) | [Previous](@previous) | [Next](@next)
 
 //: # Go functional
 //: To enter smoothly in FP world, let's look at just three important higher-order functions used in functional programming:
@@ -11,7 +11,7 @@
 //: #### Not only closures
 //: Note that closures are frequently (but not exclusively) used in calls to the map function. We can use regularly defined functions as well, but often we need only a short function, so lambdas often work out well.
 
-func map(array: [Int], callback: (Int) -> Int) -> [Int] {
+func map(_ array: [Int], callback: (Int) -> Int) -> [Int] {
     var newarray = [Int]()
     for elt in array {
         newarray += [callback(elt)]
@@ -20,7 +20,7 @@ func map(array: [Int], callback: (Int) -> Int) -> [Int] {
 }
 // let's take go ful power and define it as generics
 
-func myGenericMap<T, U>(array: [T], callback: T -> U) -> [U] {
+func myGenericMap<T, U>(_ array: [T], callback: (T) -> U) -> [U] {
     var newarray: [U] = [U]()
     for i in 0..<array.count {
         newarray += [callback(array[i])]
@@ -44,7 +44,7 @@ out2
 
 var names = ["Emile", "Agathe", "Eglantine", "Simon"]
 
-func filter<T>(xs: [T], check: T -> Bool) -> [T] {
+func filter<T>(_ xs: [T], check: (T) -> Bool) -> [T] {
     var result: [T] = []
     for x in xs {
         if check(x) {
@@ -64,7 +64,7 @@ filteredNames2
 //: # Reduce
 //: reduce/accumulate: this function is different than the previous two: it takes a binary function and some list of values and typically produces a single value: it reduces or accumulates these results into a single value.
 
-func concatenate(xs: [String]) -> String {
+func concatenate(_ xs: [String]) -> String {
     var result: String = ""
     for x in xs {
         result += x
@@ -75,7 +75,7 @@ let namesString = concatenate(names)
 namesString
 
 // with generics
-func reduce<A, R>(arr: [A], initialValue: R, combine: (R, A) -> R) -> R {
+func reduce<A, R>(_ arr: [A], initialValue: R, combine: (R, A) -> R) -> R {
     var result = initialValue
     for i in arr {
         result = combine(result, i)
@@ -83,7 +83,7 @@ func reduce<A, R>(arr: [A], initialValue: R, combine: (R, A) -> R) -> R {
     return result
 }
 
-func concatUsingReduce(xs: [String]) -> String {
+func concatUsingReduce(_ xs: [String]) -> String {
     return reduce(xs, initialValue: "", combine: +)
 }
 
@@ -93,4 +93,4 @@ namesString2
 print("\(namesString2)")
 
 
-//: [Next](@next)
+//: [Table of Contents](Agenda) | [Previous](@previous) | [Next](@next)

@@ -1,13 +1,10 @@
-//: [Previous](@previous)
-
+//: [Table of Contents](Agenda) | [Previous](@previous) | [Next](@next)
 //: # Swift what is it?
 //:
-//: ----
 //: QUOTING APPLE
 //:
-//: Swift is an innovative new programming language for Cocoa and Cocoa Touch.//:
+//: Swift is an innovative new programming language for Cocoa and Cocoa Touch:
 //: Writing code is interactive and fun, the syntax is concise yet expressive, and apps run lightning-fast.
-//: ----
 //:
 //: #### key points
 //: - Modern: melting point of different languages syntax
@@ -26,4 +23,4 @@ var str = "Hello, playground"
 //: - Brings new paradigms: statically typed vs dynamic Obj-C, functional programing made easier
 //: - Compatible with Obj-C framework
 
-//: [Next](@next)
+//: [Table of Contents](Agenda) | [Previous](@previous) | [Next](@next)

@@ -1,5 +1,4 @@
-//: [Previous](@previous)
-
+//: [Table of Contents](Agenda) | [Previous](@previous) | [Next](@next)
 //: # Value type vs Reference type
 //: Swift has two categories of Types: Value and Reference.
 //: - **Value type** is a type whose value is **copied** when it is assigned to a variable or constant, or when it is passed to a function.            ⁣
@@ -53,7 +52,7 @@ print("Triangle2's length \(tri2.length)")
 import Foundation
 let x: NSMutableString = "Hello"
 let y: NSString = x
-x.appendString(" Kats")
+x.append(" Kats")
 // Now x and y both point to the string "Hello Kats"
 
 print("x: \(x) y: \(y)")
@@ -137,5 +136,4 @@ tri_.length = 45
 print("Dia1's rect \(dia11.rect.length) tri \(dia11.tri.length)")
 
 
-
-//: [Next](@next)
+//: [Table of Contents](Agenda) | [Previous](@previous) | [Next](@next)

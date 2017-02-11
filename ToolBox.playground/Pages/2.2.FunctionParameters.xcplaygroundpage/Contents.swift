@@ -1,23 +1,23 @@
-//: [Previous](@previous)
+//: [Table of Contents](Agenda) | [Previous](@previous) | [Next](@next)
 
 //: # Function
 //: #### Functions vs Methods
 //: Functions are standalone, while methods are functions that are encapsulated in a class, struct, or enum.
 
-func hello(firstname: String, lastname: String) -> String {
+func hello(_ firstname: String, lastname: String) -> String {
     return "hello, \(firstname) \(lastname)"
 }
 
 hello("Isabel", lastname: "Dupont")
 
-func hello(firstname: String, lastname: String, age: Int, location: String) -> String {
+func hello(_ firstname: String, lastname: String, age: Int, location: String) -> String {
     return "Hello \(firstname) \(lastname). I live in \(location) too. When is your \(age + 1)th birthday?"
 }
 
 hello("Isabel", lastname: "Dupont", age: 5, location: "Geneve")
 
 
-func hello(firstname  firstname: String, lastname: String, age: Int, location: String) -> String {
+func hello(firstname: String, lastname: String, age: Int, location: String) -> String {
     return "Hello \(firstname) \(lastname). I live in \(location) too. When is your \(age + 1)th birthday?"
 }
 
@@ -41,7 +41,7 @@ hello(firstname: "Isabel", lastname: "Dupont", age: 5, location: "Geneve")
 
 class Greetings {
     
-    func hello(firstname: String, lastname: String, age: Int, location: String) -> String {
+    func hello(_ firstname: String, lastname: String, age: Int, location: String) -> String {
         return "Hello \(firstname) \(lastname). I live in \(location) too. When is your \(age + 1)th birthday?"
     }
     
@@ -66,4 +66,4 @@ class GreetingPolyglot {
 }
 let frenchGreeting = GreetingPolyglot(language: "french")
 
-//: [Next](@next)
+//: [Table of Contents](Agenda) | [Previous](@previous) | [Next](@next)

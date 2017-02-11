@@ -1,11 +1,11 @@
-//: [Previous](@previous)
+//: [Table of Contents](Agenda) | [Previous](@previous) | [Next](@next)
 
 //: This playground is very inspired by [Mike Ask blog post on protocol extension](https://mikeash.com/pyblog/friday-qa-2015-06-19-the-best-of-whats-new-in-swift.html).
 
 //: # Extension
 //: Let's define an extension to the Array structure. Waht about doing our own implementation of ```filter``` method!
 extension Array {
-    func myFilter(fn: (Element) -> Bool) -> [Element] {
+    func myFilter(_ fn: (Element) -> Bool) -> [Element] {
         var to = [Element]()
         for x in self {
             let t = x as Element;
@@ -57,8 +57,8 @@ let maxInt2 = [1, 3, 4, 24].max2
 //: What about now if you want it to work with Set, Array, Range etc... All those collection implement the protocol ```CollectionType```.
 
 
-extension CollectionType where Self.Generator.Element: Comparable {
-    var max: Self.Generator.Element {
+extension Collection where Self.Iterator.Element: Comparable {
+    var max: Self.Iterator.Element {
         var best = self[self.startIndex]
         for elt in self {
             if elt > best {
@@ -78,4 +78,4 @@ Set([5, 4, 3, 2, 1]).max
 
 //TODO
 
-//: [Next](@next)
+//: [Table of Contents](Agenda) | [Previous](@previous) | [Next](@next)

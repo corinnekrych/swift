@@ -1,11 +1,10 @@
-//: [Previous](@previous)
-
+//: [Table of Contents](Agenda) | [Previous](@previous) | [Next](@next)
 //: # Function
 //: ```func``` to declare a function.<br/>
 //: Use -> to separate the parameter names and types from the function’s return type.<br/>
 //: Call a function by following its name with a list of arguments in parentheses.
 
-func greet(name: String, day: String) -> String {
+func greet(_ name: String, day: String) -> String {
     return "Hello \(name), today is \(day)."
 }
 greet("Bob", day: "Tuesday")
@@ -33,7 +32,7 @@ let squareClosure = {(element: Int) -> Int in
     return element * element
 }
 
-let square:Int->Int = {$0 * $0}
+let square:(Int)->Int = {$0 * $0}
 
 //: # Capturing values
 //: Closures can capture and store **references** to any constants and variables from the context in which they are defined.<br/>
@@ -46,7 +45,7 @@ linear(2)
 //: # Higher Order Function
 //: Functions can be passed as arguments to other functions, and can be returned from other functions.
 
-func map(array: [Int], callback: (Int) -> Int) -> [Int] {
+func map(_ array: [Int], callback: (Int) -> Int) -> [Int] {
     var newarray = [Int]()
     for elt in array {
         newarray += [callback(elt)]
@@ -82,11 +81,11 @@ outArray4
 //: Functions can be treated like any other value in the language (first class citizen).  <br/>
 //: You can assign them to variables, pass them as arguments and return them from functions.
 
-func identity(s: Int) -> Int {
+func identity(_ s: Int) -> Int {
     return s
 }
 
 var id = identity
 
 
-//: [Next](@next)
+//: [Table of Contents](Agenda) | [Previous](@previous) | [Next](@next)

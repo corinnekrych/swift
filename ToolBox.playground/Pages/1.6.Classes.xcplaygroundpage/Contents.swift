@@ -1,5 +1,4 @@
-//: [Previous](@previous)
-
+//: [Table of Contents](Agenda) | [Previous](@previous) | [Next](@next)
 //: # Classes
 //: Use class followed by the class’s name to create a class. <br/>
 //: A property declaration in a class is written the same way as a constant or variable declaration, except that it is in the context of a class. <br/>
@@ -66,4 +65,4 @@ triangle.sideLength
 //: Instead, they provide a getter and an optional setter to retrieve and set other properties and values indirectly.
 
 
-//: [Next](@next)
+//: [Table of Contents](Agenda) | [Previous](@previous) | [Next](@next)

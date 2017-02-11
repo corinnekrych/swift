@@ -1,4 +1,4 @@
-//: [Previous](@previous)
+//: [Table of Contents](Agenda) | [Previous](@previous) | [Next](@next)
 
 //: # Operator Overloading
 //:
@@ -9,7 +9,7 @@
 func +(left: [Int], right: [Int]) -> [Int] {
     var sum = [Int]()
     assert(left.count == right.count, "vector of same length only")
-    for (key, _) in left.enumerate() {
+    for (key, _) in left.enumerated() {
         sum.append(left[key] + right[key])
     }
     return sum
@@ -19,7 +19,7 @@ var sumArray1 = [1, 2, 3] + [1, 2, 3]
 func -(left: [Int], right: [Int]) -> [Int] {
     var minus = [Int]()
     assert(left.count == right.count, "vector of same length only")
-    for (key, _) in left.enumerate() {
+    for (key, _) in left.enumerated() {
         minus.append(left[key] - right[key])
     }
     return minus
@@ -34,4 +34,4 @@ minusArray2 = [1, 2, 3] - [0, -2, 4]
 //:
 //: Typically, you’ll use overloading to extend an operation to a new object while maintaining the original semantics, rather than defining different (and confusing) behavior.
 
-//: [Next](@next)
+//: [Table of Contents](Agenda) | [Previous](@previous) | [Next](@next)
