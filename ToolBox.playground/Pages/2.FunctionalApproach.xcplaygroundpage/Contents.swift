@@ -1,4 +1,4 @@
-//: [Previous](@previous)
+//: [Table of Contents](Agenda) | [Previous](@previous) | [Next](@next)
 
 //: The problem with object-oriented languages is they’ve got all this implicit environment that they carry around with them. You wanted a banana but what you got was a gorilla holding the banana and the entire jungle.
 //: **Joe Armstrong**
@@ -163,4 +163,4 @@ let listOfGorillasInBananaAera_ = [julia, emily, eva].filter(inRangeAera2)
 
 let listA = [julia, emily, eva].filter(inRangeAera2).filter({$0.name.characters.contains("a")})
 //: The action of transformaing of function of arity n to n function of one parameter is called: currying. this technique allow you to partially apply a function which is very powefull when working with functions.
-//: [Next](@next)
+//: [Table of Contents](Agenda) | [Previous](@previous) | [Next](@next)

@@ -1,4 +1,4 @@
-//: [Previous](@previous)
+//: [Table of Contents](Agenda) | [Previous](@previous) | [Next](@next)
 
 //: ### Adding Isn’t Just for Ints
 //:
@@ -16,10 +16,10 @@ var sumArray = [1, 2] + [1, 2]
 var minusArray = [1, 2] - [1, 2]
 
 // Global func vs operator
-func add(left: [Int], _ right: [Int]) -> [Int] {
+func add(_ left: [Int], _ right: [Int]) -> [Int] {
     var sum = [Int]()
     assert(left.count == right.count, "vector of same length only")
-    for (key, _) in left.enumerate() {
+    for (key, _) in left.enumerated() {
         sum.append(left[key] + right[key])
     }
     return sum
@@ -29,4 +29,4 @@ var arr1 = [1, 1]
 var arr2 = [1, 1]
 var arr3 = add(arr1, arr2)
 
-//: [Next](@next)
+//: [Table of Contents](Agenda) | [Previous](@previous) | [Next](@next)

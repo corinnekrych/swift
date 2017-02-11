@@ -1,5 +1,4 @@
-//: [Previous](@previous)
-
+//: [Table of Contents](Agenda) | [Previous](@previous) | [Next](@next)
 //: # Constants and Variables
 //:
 //: Constants => cannot change once initialized  => ```let```<br/>
@@ -33,7 +32,7 @@ let strings = ["Corinne", "Isabel", "1"]
 
 //: # Collections and fast enumeration
 
-for var i = 0; i < strings.count; i++ {
+for i in 0 ..< strings.count {
     print(strings[i])
 }
 // Note: open the side bar
@@ -80,4 +79,4 @@ default: print("Going Nowhere")
 }
 
 
-//: [Next](@next)
+//: [Table of Contents](Agenda) | [Previous](@previous) | [Next](@next)

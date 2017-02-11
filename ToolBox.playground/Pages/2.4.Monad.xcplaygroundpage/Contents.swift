@@ -1,4 +1,4 @@
-//: [Previous](@previous)
+//: [Table of Contents](Agenda) | [Previous](@previous) | [Next](@next)
 
 //: # Problem to solve
 //:
@@ -17,12 +17,12 @@
 import Foundation
 
 var jsonString:NSString = "{\"id\":1, \"name\": \"Eliott\", \"email\": \"eliott@gmail.com\"}"
-var data = jsonString.dataUsingEncoding(NSUTF8StringEncoding)
+var data = jsonString.data(using: String.Encoding.utf8.rawValue)
 
 // Get Data to serialized into Json object
 var jsonObject: AnyObject?
 if let unwrappedData = data {
-    jsonObject = try! NSJSONSerialization.JSONObjectWithData(unwrappedData, options: NSJSONReadingOptions.MutableContainers)
+    jsonObject = try! JSONSerialization.jsonObject(with: unwrappedData, options: JSONSerialization.ReadingOptions.mutableContainers) as AnyObject?
 }
 
 jsonObject
@@ -35,7 +35,7 @@ struct User {
     var email: String
 }
 
-func callback(name: String)(user: User) -> () {
+func callback(_ name: String, _ user: User) -> () {
     print("\(name):::User is \(user.name) with email \(user.email)")
 }
 
@@ -48,7 +48,7 @@ if let json = jsonObject as? [String: AnyObject] {
         if let name = json["name"] as? String {
             if let email = json["email"] as? String {
                 let user = User(id: id, name: name, email: email)
-                unwrappingCallback(user: user)
+                unwrappingCallback(user)
             }
         }
     }
@@ -62,15 +62,15 @@ typealias JSON = AnyObject
 typealias JSONDictionary = [String: JSON]
 typealias JSONArray = [JSON]
 
-func JSONString(object: JSON?) -> String? {
+func JSONString(_ object: JSON?) -> String? {
     return object as? String
 }
 
-func JSONInt(object: JSON?) -> Int? {
+func JSONInt(_ object: JSON?) -> Int? {
     return object as? Int
 }
 
-func JSONObject(object: JSON?) -> JSONDictionary? {
+func JSONObject(_ object: JSON?) -> JSONDictionary? {
     return object as? JSONDictionary
 }
 
@@ -81,7 +81,7 @@ if let json = JSONObject(jsonObject) {
         if let name = JSONString(json["name"]) {
             if let email = JSONString(json["email"]) {
                 let user = User(id: id, name: name, email: email)
-                withFunctionCallback(user: user)
+                withFunctionCallback(user)
             }
         }
     }
@@ -91,11 +91,11 @@ if let json = JSONObject(jsonObject) {
 
 infix operator >>> { associativity left precedence 120 }
 
-func >>><A, B>(a: A?, f: A -> B?) -> B? {
+func >>><A, B>(a: A?, f: (A) -> B?) -> B? {
     if let x = a {
         return f(x)
     } else {
-        return .None
+        return .none
     }
 }
 
@@ -105,7 +105,7 @@ if let json = jsonObject >>> JSONObject {
         if let name = json["name"] >>> JSONString {
             if let email = json["email"] >>> JSONString {
                 let user = User(id: id, name: name, email: email)
-                withBindCallback(user: user)
+                withBindCallback(user)
             }
         }
     }
@@ -123,7 +123,7 @@ struct Person {
     let name: String
     let email: String
     
-    static func create(id: Int)(name: String)(email: String) -> Person {
+    static func create(_ id: Int, _ name: String, _ email: String) -> Person {
         return Person(id: id, name: name, email: email)
     }
 }
@@ -131,24 +131,24 @@ struct Person {
 infix operator <^> { associativity left } // fmap
 infix operator <*> { associativity left } // apply
 
-func <^><A, B>(f: A -> B, a: A?) -> B? {
+func <^><A, B>(f: (A) -> B, a: A?) -> B? {
     if let x = a {
         return f(x)
     } else {
-        return .None
+        return .none
     }
 }
 
-func <*><A, B>(f: (A -> B)?, a: A?) -> B? {
+func <*><A, B>(f: ((A) -> B)?, a: A?) -> B? {
     if let x = a {
         if let fx = f {
             return fx(x)
         }
     }
-    return .None
+    return .none
 }
 
-func withApplyCallback(person: Person) {
+func withApplyCallback(_ person: Person) {
     print("Person is:\(person.name) with email\(person.email)")
 }
 
@@ -162,4 +162,4 @@ if let json = jsonObject >>> JSONObject {
     withApplyCallback(user!)
 }
 
-//: [Next](@next)
+//: [Table of Contents](Agenda) | [Previous](@previous) | [Next](@next)

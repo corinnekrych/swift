@@ -1,16 +1,15 @@
-//: [Previous](@previous)
-
+//: [Table of Contents](Agenda) | [Previous](@previous) | [Next](@next)
 //: # Generics
 //: #### What is the problem we're trying to solve?
 
 
-func swapTwoInts(inout a: Int, inout _ b: Int) {
+func swapTwoInts(_ a: inout Int, _ b: inout Int) {
     let temporaryA = a
     a = b
     b = temporaryA
 }
 
-func swapTwoStrings(inout a: String, inout _ b: String) {
+func swapTwoStrings( a: inout String, _ b: inout String) {
     let temporaryA = a
     a = b
     b = temporaryA
@@ -24,7 +23,7 @@ print("someInt is now \(someInt), and anotherInt is now \(anotherInt)")
 
 //: #### Let's make it generic!
 
-func swapTwoValues<T>(inout a: T, inout _ b: T) {
+func swapTwoValues<T>(_ a: inout T, _ b: inout T) {
     let temporaryA = a
     a = b
     b = temporaryA
@@ -52,7 +51,7 @@ print("someInt is now \(someInt), and anotherInt is now \(anotherInt)")
 //: #### UpperCameCase for type
 //: Always give type parameters UpperCamelCase names (such as T and Key) to indicate that they are a placeholder for a type, not a value.
 
-func anyCommonElements <T, U where T: SequenceType, U: SequenceType, T.Generator.Element: Equatable, T.Generator.Element == U.Generator.Element> (lhs: T, _ rhs: U) -> Bool {
+func anyCommonElements <T, U> (_ lhs: T, _ rhs: U) -> Bool where T: Sequence, U: Sequence, T.Iterator.Element: Equatable, T.Iterator.Element == U.Iterator.Element {
     for lhsItem in lhs {
         for rhsItem in rhs {
             if lhsItem == rhsItem {
@@ -81,8 +80,8 @@ struct Stack<T> {
 //: # Type constraints
 //: Type Constraints, enable you to define requirements on the type parameters associated with a generic function or type.
 
-func findIndex<T where T: Equatable>(array: [T], _ valueToFind: T) -> Int? {
-    for (index, value) in array.enumerate() {
+func findIndex<T>(_ array: [T], _ valueToFind: T) -> Int? where T: Equatable {
+    for (index, value) in array.enumerated() {
         if value == valueToFind {
             return index
         }
@@ -98,15 +97,15 @@ findIndex([4, 7], 4)
 //:
 //: The actual type to use for that associated type is not specified until the protocol is adopted.
 //:
-//: Associated types are specified with the typealias keyword.
+//: Associated types are specified with the associatedtype keyword (since Swift3, prior we used keyword typealias).
 
 public protocol DataStore {
-    typealias ContentType
+    associatedtype ContentType
     func save(data: ContentType) -> Bool
 }
 
 public class InMemoryDataStore<T>: DataStore {
-    typealias ContentType = T
+    public typealias ContentType = T
     public init() {}
     public func save(data: ContentType) -> Bool {
         print("Saving data: \(data)")
@@ -122,18 +121,17 @@ public class Manager<DS: DataStore> {
     }
     
     public func storeData(data: DS.ContentType) {
-        dataStore.save(data)
+        dataStore.save(data: data)
     }
     
 }
 let dataStore = InMemoryDataStore<String>()
 let manager = Manager(dataStore: dataStore)
-manager.storeData("text")
+manager.storeData(data: "text")
 
 let dataStoreInt = InMemoryDataStore<Int>()
 let managerInt = Manager(dataStore: dataStoreInt)
-managerInt.storeData(123456)
+managerInt.storeData(data: 123456)
 managerInt
 
-
-//: [Next](@next)
+//: [Table of Contents](Agenda) | [Previous](@previous) | [Next](@next)

@@ -1,5 +1,4 @@
-//: [Previous](@previous)
-
+//: [Table of Contents](Agenda) | [Previous](@previous) | [Next](@next)
 //: # Compound Type
 //: Tuples are groups of values combined into a single, compound value. Very often use as return type of a function. For example, it allows you to return a value combined with an error code.
 //: ### Compound type
@@ -68,4 +67,4 @@ case let (x, y) where x < 1000 && y == false:   imageName = "11d"
 case let (x, y): imageName = "dunno"
 }
 
-//: [Next](@next)
+//: [Table of Contents](Agenda) | [Previous](@previous) | [Next](@next)

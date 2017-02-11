@@ -1,5 +1,4 @@
-//: [Previous](@previous)
-
+//: [Table of Contents](Agenda) | [Previous](@previous) | [Next](@next)
 //: # An Optional is a box
 //:
 //: ![Box](box.jpg)
@@ -54,7 +53,7 @@ var j: Int?
 var kitty: String? = "Kitty"
 var greeting = "Hello \(kitty)"     // No compiler error!
 print("Hello")
-print(kitty)      // Also fine.
+print(kitty)      // Also fine but with a warning since Swift3: Expression implicitly coerced fron String? to Any
 //var nope = "Hello " + kitty         // Compiler error
 
 //: # Different ways of unwrapping
@@ -98,7 +97,7 @@ class Address {
 }
 
 
-func whichCity(person: Person) -> String? {
+func whichCity(_ person: Person) -> String? {
     if let name = person.name {
         if let city = person.residence?.address?.city {
             print("\(name) lives in \(city).")
@@ -120,8 +119,8 @@ whichCity(john)
 
 //: ##### From Swift 1.2
 //: Optional chaining with a single ```if let``` to avoid pyramid of doom
-func whichCity2(person: Person) -> String? {
-    if let name = person.name, city = person.residence?.address?.city {
+func whichCity2(_ person: Person) -> String? {
+    if let name = person.name, let city = person.residence?.address?.city {
         print("\(name) lives in \(city).")
         return city
     } else {
@@ -137,7 +136,7 @@ whichCity2(eliot)
 
 //: ##### From Swift 2.0
 //: Taking the other part of the check, not checking if not nil but rather focus on what is happening when nil. Exit/return the function.
-func whichCity3(person: Person) -> String? {
+func whichCity3(_ person: Person) -> String? {
     guard let name = person.name else {
         print("I don't know anything.")
         return nil
@@ -157,10 +156,10 @@ whichCity3(mike)
 //:
 //: Check first or use optional chaining
 
-func toInt(first:String!) -> Int! {
+func toInt(_ first:String!) -> Int! {
     return Int(first)!
 }
 var myIn:Int = toInt("3")
 // var myIn:Int = toInt("3e") // runtime error
 
-//: [Next](@next)
+//: [Table of Contents](Agenda) | [Previous](@previous) | [Next](@next)

@@ -1,5 +1,4 @@
-//: [Previous](@previous)
-
+//: [Table of Contents](Agenda) | [Previous](@previous) | [Next](@next)
 //: # More Than One Type
 //:
 //: #### Generics to the Rescue!
@@ -17,7 +16,7 @@ infix operator ⊕ { associativity left precedence 140 }
 func ⊕<T: Number>(left: [T], right: [T]) -> [T] {
     var minus = [T]()
     assert(left.count == right.count, "vector of same length only")
-    for (key, _) in left.enumerate() {
+    for (key, _) in left.enumerated() {
         minus.append(left[key] + right[key])
     }
     return minus
@@ -25,6 +24,4 @@ func ⊕<T: Number>(left: [T], right: [T]) -> [T] {
 
 var doubleArray = [2.4, 3.6] ⊕ [1.6, 2.4]
 
-
-
-//: [Next](@next)
+//: [Table of Contents](Agenda) | [Previous](@previous) | [Next](@next)
