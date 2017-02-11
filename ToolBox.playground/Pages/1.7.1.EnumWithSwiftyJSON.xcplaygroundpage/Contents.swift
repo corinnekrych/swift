@@ -72,7 +72,7 @@ public enum JSON {
             self = .scalarString(string)
         case  _ as NSNull:
             self = .null(nil)
-        case let array as NSArray:
+        case let array as Array<AnyObject>:
             var jsonArray = Array<JSON>()
             for object : AnyObject in array {
                 jsonArray.append(JSON(object: object))
@@ -562,7 +562,7 @@ extension JSON {
     //Optional Int
     public var unsignedInteger: Int? {
         get {
-            return self.number?.uintValue
+            return self.number?.intValue
         }
     }
     
@@ -594,13 +594,13 @@ extension JSON: Comparable {
     fileprivate var type: Int {
         get {
             switch self {
-            case .scalarNumber(let number):
+            case .scalarNumber(_):
                 return 1
-            case .scalarString(let string):
+            case .scalarString(_):
                 return 2
-            case .sequence(let array):
+            case .sequence(_):
                 return 3
-            case .mapping(let dictionary):
+            case .mapping(_):
                 return 4
             case .null(let error):
                 if error == nil {

@@ -34,15 +34,16 @@ func greetShoftShake(_ firstname: String, lastname: String) -> String {
 
 greetShoftShake("Eloise", lastname: "Dupont")
 
-//: #### with some syntactic sugar:
+//: #### In Swift2 with some syntactic sugar:
 
 
 func greetingsEasy(_ firstname:String, _ lastname:String, _ today:String, _ location:String) -> String {
     return "Hello \(firstname) \(lastname). Welcome in \(location) today \(today)"
 }
 
-let greetMichelle = greetingsEasy("Michelle")
-greetMichelle("Dupont")(today: "Thursday 23rd October")(location: "Geneve")
+//let greetMichelle = greetingsEasy("Michelle")
+//greetMichelle("Dupont")(today: "Thursday 23rd October")(location: "Geneve")
 
+//: Note: See blog post [A Little less spice in swift 3](https://otters.io/a-little-less-spice-in-swift-3) to understand the reasonning behind that.
 
 //: [Table of Contents](Agenda) | [Previous](@previous) | [Next](@next)

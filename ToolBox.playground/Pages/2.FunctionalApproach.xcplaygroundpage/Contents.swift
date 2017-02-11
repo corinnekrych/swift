@@ -41,7 +41,7 @@ class Jungle {
     func gorillasInBananaAera() -> [Gorilla] {
         var gorillasInBananaAera: [Gorilla] = []
         for gorilla in gorillas {
-            if gorilla.isInRange(bananaAera) {
+            if gorilla.isInRange(target: bananaAera) {
                 gorillasInBananaAera.append(gorilla)
             }
         }
@@ -95,19 +95,18 @@ let listOfGorillasInBananaAera = [julia2, emily2, eva2].filter(inRange)
 
 func toUpperCase(gorilla: Gorilla2) -> Gorilla2 {
     var goril = gorilla
-    goril.name = gorilla.name.uppercaseString
+    goril.name = gorilla.name.uppercased()
     return goril
 }
 func toLowerCase(gorilla: Gorilla2) -> Gorilla2 {
     var goril = gorilla
-    goril.name = gorilla.name.lowercaseString
+    goril.name = gorilla.name.lowercased()
     return goril
 }
 
 let namesString = [julia2, emily2, eva2].filter(inRange)
                                         .map(toUpperCase)
-                                        .reduce("List of names:",
-                                                combine: { name, gorilla in
+                                        .reduce("List of names:", { name, gorilla in
                                                     name + " " + gorilla.name
                                                 })
 
@@ -115,14 +114,14 @@ let namesString = [julia2, emily2, eva2].filter(inRange)
 
 //: I coined the term for the first time in [Chris Eidehof's book](https://www.objc.io/books/fpinswift/) here is how to do function compisition with our Gorillas:
 
-typealias Transfrom = Gorilla2 -> Gorilla2
+typealias Transfrom = (Gorilla2) -> Gorilla2
 
-func compose(filter1: Transfrom, filter2: Transfrom) -> Transfrom {
+func compose(filter1: @escaping Transfrom, filter2: @escaping Transfrom) -> Transfrom {
     return { gorilla in
         filter2(filter1(gorilla))
     }
 }
-let composedFunction = compose(toUpperCase, filter2: toLowerCase)
+let composedFunction = compose(filter1: toUpperCase, filter2: toLowerCase)
 
 let listA2 = [julia2, emily2, eva2].map(composedFunction)
 
@@ -130,7 +129,7 @@ let listA2 = [julia2, emily2, eva2].map(composedFunction)
 //: With function composition, we very close to be able to use operator overloading:
 
 infix  operator >>> {associativity left}
-func >>> (filter1: Transfrom, filter2: Transfrom) -> Transfrom {
+func >>> (filter1: @escaping Transfrom, filter2: @escaping Transfrom) -> Transfrom {
     return { gorilla in
         filter2(filter1(gorilla))
     }
@@ -143,22 +142,22 @@ let listA3 = [julia2, emily2, eva2].map(toUpperCase >>> toLowerCase)
 //: ## Curried function: a first hint
 //: If we take back the example with ```inRange``` function, we noticed target was defined as a global 
 //: variable. Let's change it to include it as a prametrized function. Instead of having a function with arity 2 (ie: 2 parameter) we've choosen to have a function with on parameter that return another function.
-func inRange_returnFunction(target: SquareAera) -> Gorilla -> Bool {
+func inRange_returnFunction(target: SquareAera) -> (Gorilla) -> Bool {
     return { gorilla in
         target.origin.x <= gorilla.position.x && gorilla.position.x <= target.origin.x + target.length
             && target.origin.y <= gorilla.position.y && gorilla.position.y <= target.origin.y + target.length
     }
 }
 //: Since we have a function that return a function, we can then defined a partially applied function:
-let inRangeAera = inRange_returnFunction(SquareAera(origin: Position(x: 1, y: 1), length: 10))
+let inRangeAera = inRange_returnFunction(target: SquareAera(origin: Position(x: 1, y: 1), length: 10))
 let listOfGorillasInBananaAera_returnFunction = [julia, emily, eva].filter(inRangeAera)
 
 //: Another way of doing it is by using this simplified syntax:
-func inRange_curry(target: SquareAera)(gorilla: Gorilla) -> Bool {
+func inRange_curry(target: SquareAera, gorilla: Gorilla) -> Bool {
     return target.origin.x <= gorilla.position.x && gorilla.position.x <= target.origin.x + target.length
         && target.origin.y <= gorilla.position.y && gorilla.position.y <= target.origin.y + target.length
 }
-let inRangeAera2 = inRange_returnFunction(SquareAera(origin: Position(x: 1, y: 1), length: 10))
+let inRangeAera2 = inRange_returnFunction(target: SquareAera(origin: Position(x: 1, y: 1), length: 10))
 let listOfGorillasInBananaAera_ = [julia, emily, eva].filter(inRangeAera2)
 
 let listA = [julia, emily, eva].filter(inRangeAera2).filter({$0.name.characters.contains("a")})

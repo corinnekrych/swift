@@ -35,8 +35,10 @@ struct User {
     var email: String
 }
 
-func callback(_ name: String, _ user: User) -> () {
-    print("\(name):::User is \(user.name) with email \(user.email)")
+func callback(_ name: String) -> (User) -> () {
+    return { (user: User) -> () in
+        print("\(name):::User is \(user.name) with email \(user.email)")
+    }
 }
 
 //: #### How to do in Swift
@@ -89,7 +91,12 @@ if let json = JSONObject(jsonObject) {
 
 //: #### Step2 - define bind
 
-infix operator >>> { associativity left precedence 120 }
+//infix operator >>> { associativity left precedence 120 }
+precedencegroup ComparisonPrecedence {
+    associativity: left
+    higherThan: LogicalConjunctionPrecedence
+}
+infix operator >>> : ComparisonPrecedence
 
 func >>><A, B>(a: A?, f: (A) -> B?) -> B? {
     if let x = a {
@@ -128,8 +135,11 @@ struct Person {
     }
 }
 
-infix operator <^> { associativity left } // fmap
-infix operator <*> { associativity left } // apply
+//infix operator <^> { associativity left } // fmap
+//infix operator <*> { associativity left } // apply
+
+infix operator <^> : ComparisonPrecedence
+infix operator <*> : ComparisonPrecedence
 
 func <^><A, B>(f: (A) -> B, a: A?) -> B? {
     if let x = a {
@@ -152,14 +162,15 @@ func withApplyCallback(_ person: Person) {
     print("Person is:\(person.name) with email\(person.email)")
 }
 
-if let json = jsonObject >>> JSONObject {
-    
-    let user = Person.create <^>
-        json["id"]    >>> JSONInt    <*>
-        json["name"]  >>> JSONString <*>
-        json["email"] >>> JSONString
-    
-    withApplyCallback(user!)
-}
+// TODO change currying
+//if let json = jsonObject >>> JSONObject {
+//    
+//    let user = Person.create <^>
+//        json["id"]    >>> JSONInt    <*>
+//        json["name"]  >>> JSONString <*>
+//        json["email"] >>> JSONString
+//    
+//    withApplyCallback(user!)
+//}
 
 //: [Table of Contents](Agenda) | [Previous](@previous) | [Next](@next)
